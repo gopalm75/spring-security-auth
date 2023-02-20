@@ -11,6 +11,6 @@ http://www.mulesoft.org/schema/mule/secure-properties http://www.mulesoft.org/sc
 		<http:listener doc:name="Listener" doc:id="6e599f62-630e-43c0-aa29-6b3b6cb5aa63" config-ref="HTTP_Listener_config" path="${api.path}"/>
 		<http:basic-security-filter doc:name="Basic security filter" doc:id="5ea7420f-cbbb-4a5a-a550-10b2a48053f8" realm="mule"/>
 		<spring:authorization-filter doc:name="Authorization filter" doc:id="47a73dab-b1c6-4ab8-9524-2c8c1edc3e44" requiredAuthorities="MULE_USER"/>
-		<set-payload value="hello world!!!!!" doc:name="Set Payload" doc:id="10b0b173-0c8c-4702-a8b5-50681a2b86aa" />
+		<set-payload value="hello muleys this is using spring security for auth!!!" doc:name="Set Payload" doc:id="10b0b173-0c8c-4702-a8b5-50681a2b86aa" />
 	</flow>
 </mule>
