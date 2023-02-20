@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:secure-properties="http://www.mulesoft.org/schema/mule/secure-properties" xmlns:spring="http://www.mulesoft.org/schema/mule/spring"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/spring http://www.mulesoft.org/schema/mule/spring/current/mule-spring.xsd
+http://www.mulesoft.org/schema/mule/secure-properties http://www.mulesoft.org/schema/mule/secure-properties/current/mule-secure-properties.xsd">
+	
+	<flow name="spring-beans-sampleFlow" doc:id="0f06b48c-6123-43e2-b297-72f831afb812" >
+		<http:listener doc:name="Listener" doc:id="6e599f62-630e-43c0-aa29-6b3b6cb5aa63" config-ref="HTTP_Listener_config" path="${api.path}"/>
+		<http:basic-security-filter doc:name="Basic security filter" doc:id="5ea7420f-cbbb-4a5a-a550-10b2a48053f8" realm="mule"/>
+		<spring:authorization-filter doc:name="Authorization filter" doc:id="47a73dab-b1c6-4ab8-9524-2c8c1edc3e44" requiredAuthorities="MULE_USER"/>
+		<set-payload value="hello world!!!!!" doc:name="Set Payload" doc:id="10b0b173-0c8c-4702-a8b5-50681a2b86aa" />
+	</flow>
+</mule>
